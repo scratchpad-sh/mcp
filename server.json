@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.scratchpad-sh/scratchpad",
+  "title": "Scratchpad",
+  "description": "Search, read, write, and organize your Scratchpad notes from any MCP client.",
+  "websiteUrl": "https://scratchpad.sh/ai/",
+  "repository": { "url": "https://github.com/scratchpad-sh/mcp", "source": "github" },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@scratchpadsh/mcp",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "SCRATCHPAD_TOKEN", "description": "API token from Settings, API tokens", "isRequired": true, "isSecret": true },
+        { "name": "SCRATCHPAD_URL", "description": "Install to talk to. Defaults to https://app.scratchpad.sh", "isRequired": false }
+      ]
+    }
+  ],
+  "remotes": [{ "type": "streamable-http", "url": "https://app.scratchpad.sh/api/mcp" }]
+}
